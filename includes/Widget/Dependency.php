@@ -88,7 +88,6 @@ class Dependency
 
         $class_names = [
             'hello-world',
-            'inline-editing'
         ];
 
         foreach ( $class_names as $class_name) {
