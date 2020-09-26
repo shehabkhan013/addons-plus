@@ -1,0 +1,20 @@
+{
+    "name": "shehabkhan013/addons-plus",
+    "description": "This plugin for elementor extension plugin",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "A. M. Shehab",
+            "email": "shehabkhan013@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Addons_Plus\\" : "includes/"
+        },
+        "files": []
+    }
+}
