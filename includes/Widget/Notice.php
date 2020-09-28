@@ -31,10 +31,11 @@ class Notice
             return;
         }
 
-
         new \Addons_Plus\Widget\Dependency();
 
     }
+
+
 
     /**
      * Admin notice

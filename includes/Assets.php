@@ -16,6 +16,10 @@ class Assets
 
     public function get_styles() {
         return [
+            'semantic-min' => [
+                'src' => ADDONS_PLUS_URL .'assets/css/semantic.min.css',
+                'version' => '2.4.0',
+            ],
             'addons-plus-style' => [
                 'src' => ADDONS_PLUS_URL .'assets/css/frontend.css',
                 'version' => filemtime( ADDONS_PLUS_PATH . 'assets/css/frontend.css' ),
@@ -29,6 +33,11 @@ class Assets
     }
     public function get_scripts() {
         return [
+            'semantic-min' =>[
+                'src' => ADDONS_PLUS_URL .'assets/js/semantic.min.js',
+                'version' => '2.4.0',
+                'deps' => [ 'jquery' ]
+            ],
             'addons-plus-script' =>[
                 'src' => ADDONS_PLUS_URL .'assets/js/frontend.js',
                 'version' => filemtime( ADDONS_PLUS_PATH . 'assets/js/frontend.js' ),
@@ -59,7 +68,9 @@ class Assets
             wp_enqueue_style( 'addons-plus-admin-style');
         }
 
+        wp_enqueue_style( 'semantic-min' );
         wp_enqueue_style( 'addons-plus-style' );
+        wp_enqueue_script( 'semantic-min' );
         wp_enqueue_script( 'addons-plus-script' );
     }
 }

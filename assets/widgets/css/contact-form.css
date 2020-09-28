@@ -1,0 +1,39 @@
+.adp-cform-wrapper.ui.form {
+    background: #f5f5f5;
+    padding: 30px 15px;
+}
+.adp-cform-wrapper.ui.form h5{
+    margin-bottom: 0;
+}
+.adp-cform-header p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+.adp-cform-wrapper.ui.form .ui-control {
+    height: 40px;
+    border-radius: 0;
+    font-size: 14px;
+}
+.adp-cform-wrapper.ui.form .ui-control:focus{
+    border-radius: 0;
+    outline: thin solid rgba(0, 115, 170, 0.15);
+    outline-offset: -4px;
+}
+.adp-cform-wrapper.ui.form textarea.ui-control {
+    min-height: 100px;
+    resize: none;
+}
+
+.ui.button {
+    border-radius: 0;
+    height: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #000;
+}
+.ui.form .field.field input:-webkit-autofill,
+.adp-cform-wrapper.ui.form .field.field input:-webkit-autofill:focus{
+    box-shadow: none !important;
+    border-color: initial !important;
+}
