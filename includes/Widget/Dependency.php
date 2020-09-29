@@ -98,6 +98,10 @@ class Dependency
             'addons-plus-cf7-style' => [
                 'src' => ADDONS_PLUS_URL .'assets/widgets/css/cf7.css',
                 'version' => filemtime( ADDONS_PLUS_PATH . 'assets/widgets/css/cf7.css' ),
+            ],
+            'addons-plus-we-forms-style' => [
+                'src' => ADDONS_PLUS_URL .'assets/widgets/css/we-forms.css',
+                'version' => filemtime( ADDONS_PLUS_PATH . 'assets/widgets/css/we-forms.css' ),
             ]
         ];
     }
@@ -169,6 +173,7 @@ class Dependency
         $folder_names = [
             'contact-form',
             'cf7',
+            'we-forms',
         ];
 
 
