@@ -6,11 +6,9 @@ namespace Addons_Plus;
  * Class Widget
  * @package Addons_Plus
  */
+class Widget {
 
-class Widget
-{
-
-    public function __construct() {
-        new Widget\Notice();
-    }
+	public function __construct() {
+		new Widget\Notice();
+	}
 }

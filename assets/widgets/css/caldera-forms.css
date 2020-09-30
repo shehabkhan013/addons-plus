@@ -1,0 +1,56 @@
+.adp-caldera-form-wrap{
+    background: #f5f5f5;
+    padding: 30px 15px;
+}
+.caldera-grid label {
+    font-size: 14px !important;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+
+.caldera-grid .form-control {
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius:0;
+    box-shadow: none;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.caldera-grid .form-control:focus {
+    border-color: #0073aa;
+    outline: thin solid rgba(0, 115, 170, 0.15);
+    outline-offset: -4px;
+    box-shadow: none;
+}
+.caldera-grid textarea.form-control {
+    height: 120px;
+    resize: none;
+}
+.caldera-grid .btn-default{
+    width: 100%;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    border: none;
+    background: #0073aa;
+    color: #fff;
+    border-radius: 0;
+}
+.caldera-grid .btn-default:hover{
+    background: #333;
+    color: #fff;
+}
+.caldera-grid .btn-default:focus{
+    background: #333;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+}
+h1:not(.site-title):before, h2:before {
+    content: none;
+    height: 0;
+    margin:  0;
+    width: 0;
+}

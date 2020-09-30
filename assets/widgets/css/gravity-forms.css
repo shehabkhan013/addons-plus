@@ -1,0 +1,42 @@
+.adp-gravity-form-wraper {
+    background: #f5f5f5;
+    padding: 30px 15px;
+}
+
+.gform_heading h3{
+    margin-bottom: 0;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+
+.gform_heading .gform_description{
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+
+
+.gform_wrapper .top_label div.ginput_container {
+    margin-top: 0 !important;
+}
+
+
+.gform_wrapper .gfield_label{
+    font-size: 14px !important;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+
+body .gform_wrapper .top_label div.ginput_container span label{
+    font-size: 12px !important;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    margin-bottom: 0;
+}
+
+.gform_wrapper .gform_footer input[type=submit] {
+    border-radius: 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+    padding: 5px 15px;
+}

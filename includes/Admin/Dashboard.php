@@ -9,15 +9,14 @@ namespace Addons_Plus\Admin;
  */
 class Dashboard {
 
-    public function plugin_dashboard_page() {
+	public function plugin_dashboard_page() {
 
 
-        $template = __DIR__ . '/views/dashboard.php';
+		$template = __DIR__ . '/views/dashboard.php';
 
 
-
-        if ( file_exists( $template ) ) {
-            include $template;
-        }
-    }
+		if ( file_exists( $template ) ) {
+			include $template;
+		}
+	}
 }
