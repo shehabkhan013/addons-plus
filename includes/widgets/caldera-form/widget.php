@@ -531,7 +531,7 @@ class Caldera_Form extends Widget_Base {
 		$this->start_controls_section(
 			'submit',
 			[
-				'label' => __( 'Submit Button', 'addons-plus' ),
+				'label' => __( 'Button', 'addons-plus' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);

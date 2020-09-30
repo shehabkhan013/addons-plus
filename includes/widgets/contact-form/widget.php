@@ -471,7 +471,7 @@ class Contact_Form extends Widget_Base {
 			[
 				'label'      => __( 'Button Width', 'addons-plus' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
+				'size_units' => [ 'px', '%' ],
 				'range'      => [
 					'px' => [
 						'min'  => 0,
@@ -480,7 +480,7 @@ class Contact_Form extends Widget_Base {
 					]
 				],
 				'default'    => [
-					'unit' => 'px'
+					'unit' => '%'
 				],
 				'selectors'  => [
 					'{{WRAPPER}} .adp-cform-wrapper.ui.form .contact_button.ui.button' => 'width: {{SIZE}}{{UNIT}};',
