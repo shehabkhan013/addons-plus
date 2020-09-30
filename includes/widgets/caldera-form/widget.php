@@ -281,44 +281,17 @@ class Caldera_Form extends Widget_Base {
 			'_section_fields_style',
 			[
 				'label' => __( 'Form Fields', 'addons-plus' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			]
-		);
-		$this->add_responsive_control(
-			'field_width',
-			[
-				'label'      => __( 'Width', 'addons-plus' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%' ],
-				'default'    => [
-					'unit' => '%',
-					'size' => 99
-				],
-				'range'      => [
-					'%'  => [
-						'min' => 1,
-						'max' => 100,
-					],
-					'px' => [
-						'min' => 1,
-						'max' => 800,
-					],
-				],
-				'selectors'  => [
-					'{{WRAPPER}} .form-group:not(.btn)' => 'width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .form-group:not(.btn)' => 'width: {{SIZE}}{{UNIT}};',
-
-				],
+				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_responsive_control(
 			'field_margin',
 			[
-				'label'      => __( 'Field Spacing', 'addons-plus' ),
-				'type'       => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Field Spacing', 'addons-plus' ),
+				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
-				'selectors'  => [
+				'selectors' => [
 					'{{WRAPPER}} .form-group:not(.btn)' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -327,11 +300,11 @@ class Caldera_Form extends Widget_Base {
 		$this->add_responsive_control(
 			'field_padding',
 			[
-				'label'      => __( 'Padding', 'addons-plus' ),
-				'type'       => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Padding', 'addons-plus' ),
+				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'selectors'  => [
-					'{{WRAPPER}} .form-group:not(.btn) input, {{WRAPPER}} .form-group:not(.btn) textarea' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'selectors' => [
+					'{{WRAPPER}} .form-group input:not(.btn)' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -339,11 +312,11 @@ class Caldera_Form extends Widget_Base {
 		$this->add_responsive_control(
 			'field_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'addons-plus' ),
-				'type'       => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Border Radius', 'addons-plus' ),
+				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
-				'selectors'  => [
-					'{{WRAPPER}} .form-group:not(.btn) input, {{WRAPPER}} .form-group:not(.btn) textarea' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'selectors' => [
+					'{{WRAPPER}} .form-group input:not(.btn), {{WRAPPER}} .form-group textarea' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -351,20 +324,19 @@ class Caldera_Form extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'field_typography',
-				'label'    => __( 'Typography', 'addons-plus' ),
-				'selector' => '{{WRAPPER}} .form-group:not(.btn) input, {{WRAPPER}} .form-group:not(.btn) textarea',
-				'scheme'   => Scheme_Typography::TYPOGRAPHY_3
+				'name' => 'field_typography',
+				'label' => __( 'Typography', 'addons-plus' ),
+				'selector' => '{{WRAPPER}} .form-group input:not(.btn), {{WRAPPER}} .form-group textarea',
 			]
 		);
 
 		$this->add_control(
 			'field_textcolor',
 			[
-				'label'     => __( 'Field Text Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
+				'label' => __( 'Field Text Color', 'addons-plus' ),
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .form-group:not(.btn) ' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .form-group input:not(.btn), {{WRAPPER}} .form-group textarea' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -372,12 +344,12 @@ class Caldera_Form extends Widget_Base {
 		$this->add_control(
 			'field_placeholder_color',
 			[
-				'label'     => __( 'Field Placeholder Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
+				'label' => __( 'Field Placeholder Color', 'addons-plus' ),
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} ::-webkit-input-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} ::-moz-placeholder'          => 'color: {{VALUE}};',
-					'{{WRAPPER}} ::-ms-input-placeholder'     => 'color: {{VALUE}};',
+					'{{WRAPPER}} ::-webkit-input-placeholder'	=> 'color: {{VALUE}};',
+					'{{WRAPPER}} ::-moz-placeholder'			=> 'color: {{VALUE}};',
+					'{{WRAPPER}} ::-ms-input-placeholder'		=> 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -394,26 +366,26 @@ class Caldera_Form extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'     => 'field_border',
-				'selector' => '{{WRAPPER}} .wpforms-field input, {{WRAPPER}} .wpforms-field-textarea textarea',
+				'name' => 'field_border',
+				'selector' => '{{WRAPPER}} .form-group input:not(.btn), {{WRAPPER}} .form-group textarea',
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'     => 'field_box_shadow',
-				'selector' => '{{WRAPPER}} .wpforms-field input, {{WRAPPER}} .wpforms-field-textarea textarea',
+				'name' => 'field_box_shadow',
+				'selector' => '{{WRAPPER}} .form-group input:not(.btn), {{WRAPPER}} .form-group textarea',
 			]
 		);
 
 		$this->add_control(
 			'field_bg_color',
 			[
-				'label'     => __( 'Background Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
+				'label' => __( 'Background Color', 'addons-plus' ),
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .wpforms-field input, {{WRAPPER}} .wpforms-field-textarea textarea' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .form-group input:not(.btn), {{WRAPPER}} .form-group textarea' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -430,29 +402,29 @@ class Caldera_Form extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'     => 'field_focus_border',
-				'selector' => '{{WRAPPER}} .wpforms-field input:focus, {{WRAPPER}} .wpforms-field-textarea textarea:focus',
+				'name' => 'field_focus_border',
+				'selector' => '{{WRAPPER}} .form-group input:focus:not(.btn), {{WRAPPER}} .form-group textarea:focus',
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'     => 'field_focus_box_shadow',
-				'exclude'  => [
+				'name' => 'field_focus_box_shadow',
+				'exclude' => [
 					'box_shadow_position',
 				],
-				'selector' => '{{WRAPPER}} .wpforms-field input:focus, {{WRAPPER}} .wpforms-field-textarea textarea:focus',
+				'selector' => '{{WRAPPER}} .form-group input:focus:not(.btn), {{WRAPPER}} .form-group textarea:focus',
 			]
 		);
 
 		$this->add_control(
 			'field_focus_bg_color',
 			[
-				'label'     => __( 'Background Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
+				'label' => __( 'Background Color', 'addons-plus' ),
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .wpforms-field input:focus, {{WRAPPER}} .wpforms-field-textarea textarea:focus' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .form-group input:focus:not(.btn), {{WRAPPER}} .form-group textarea:focus' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -462,22 +434,23 @@ class Caldera_Form extends Widget_Base {
 
 		$this->end_controls_section();
 
+
 		$this->start_controls_section(
 			'caldera-form-label',
 			[
 				'label' => __( 'Form Fields Label', 'addons-plus' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
+				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_responsive_control(
 			'label_margin',
 			[
-				'label'      => __( 'Margin', 'addons-plus' ),
-				'type'       => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Margin', 'addons-plus' ),
+				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
-				'selectors'  => [
-					'{{WRAPPER}} .wpforms-field-container label.wpforms-field-label' => 'display: inline-block; padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'selectors' => [
+					'{{WRAPPER}} .caldera-grid label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -485,42 +458,19 @@ class Caldera_Form extends Widget_Base {
 		$this->add_responsive_control(
 			'label_padding',
 			[
-				'label'      => __( 'Padding', 'addons-plus' ),
-				'type'       => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Padding', 'addons-plus' ),
+				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'selectors'  => [
-					'{{WRAPPER}} .wpforms-field-container label.wpforms-field-label' => 'display: inline-block; padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'selectors' => [
+					'{{WRAPPER}} .caldera-grid label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
-		$this->add_responsive_control(
-			'sub_label',
-			[
-				'label'           => __( 'Sub Label', 'addons-plus' ),
-				'type'            => Controls_Manager::CHOOSE,
-				'options'         => [
-					'none'  => [
-						'title' => __( 'Hide', 'addons-plus' ),
-						'icon'  => 'eicon-minus-square',
-					],
-					'block' => [
-						'title' => __( 'Show', 'addons-plus' ),
-						'icon'  => 'eicon-plus-square',
-					],
 
-				],
-				'desktop_default' => 'block',
-				'toggle'          => false,
-				'prefix_class'    => 'adp-form-sub-label--%s',
-				'selectors'       => [
-					'{{WRAPPER}} .wpforms-field-container label.wpforms-field-sublabel' => 'display: {{Value}};',
-				],
-			]
-		);
 		$this->add_control(
 			'hr3',
 			[
-				'type'  => Controls_Manager::DIVIDER,
+				'type' => Controls_Manager::DIVIDER,
 				'style' => 'thick',
 			]
 		);
@@ -528,59 +478,28 @@ class Caldera_Form extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'label_typography',
-				'label'    => __( 'Label Typography', 'addons-plus' ),
-				'selector' => '{{WRAPPER}} .wpforms-field-container label.wpforms-field-label',
-				'scheme'   => Scheme_Typography::TYPOGRAPHY_3
+				'name' => 'label_typography',
+				'label' => __( 'Label Typography', 'addons-plus' ),
+				'selector' => '{{WRAPPER}} .caldera-grid label',
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'      => 'sublabel_typography',
-				'label'     => __( 'Sub Label Typography', 'addons-plus' ),
-				'selector'  => '{{WRAPPER}} .wpforms-field-sublabel',
-				'scheme'    => Scheme_Typography::TYPOGRAPHY_3,
-				'condition' => [
-					'sub_label' => 'block'
-				],
+				'name' => 'desc_typography',
+				'label' => __( 'Description Typography', 'addons-plus' ),
+				'selector' => '{{WRAPPER}} .caldera-grid .help-block',
 			]
 		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name'     => 'desc_typography',
-				'label'    => __( 'Description Typography', 'addons-plus' ),
-				'selector' => '{{WRAPPER}} .wpforms-field-description',
-				'scheme'   => Scheme_Typography::TYPOGRAPHY_3
-			]
-		);
-
-		$this->add_control(
-			'label_color_popover',
-			[
-				'label'        => __( 'Colors', 'addons-plus' ),
-				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( '', 'addons-plus' ),
-				'label_on'     => __( 'Custom', 'addons-plus' ),
-				'return_value' => 'yes',
-			]
-		);
-
-		$this->start_popover();
 
 		$this->add_control(
 			'label_color',
 			[
-				'label'     => __( 'Label Text Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
+				'label' => __( 'Label Text Color', 'addons-plus' ),
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .wpforms-field-container label.wpforms-field-label' => 'color: {{VALUE}}',
-				],
-				'condition' => [
-					'label_color_popover' => 'yes'
+					'{{WRAPPER}} .caldera-grid label' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -588,69 +507,62 @@ class Caldera_Form extends Widget_Base {
 		$this->add_control(
 			'requered_label',
 			[
-				'label'     => __( 'Required Label Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
+				'label' => __( 'Required Label Color', 'addons-plus' ),
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .wpforms-required-label' => 'color: {{VALUE}}',
-				],
-				'condition' => [
-					'label_color_popover' => 'yes'
+					'{{WRAPPER}} .field_required' => 'color: {{VALUE}} !important',
 				],
 			]
 		);
 
 		$this->add_control(
-			'sublabel_color',
+			'desc_color',
 			[
-				'label'     => __( 'Sub Label Text Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
+				'label' => __( 'Description Text Color', 'addons-plus' ),
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .wpforms-field-sublabel' => 'color: {{VALUE}}',
-				],
-				'condition' => [
-					'label_color_popover' => 'yes'
+					'{{WRAPPER}} .caldera-grid .help-block' => 'color: {{VALUE}}',
 				],
 			]
 		);
-
-		$this->add_control(
-			'desc_label_color',
-			[
-				'label'     => __( 'Description Text Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .wpforms-field-description' => 'color: {{VALUE}}',
-				],
-				'condition' => [
-					'label_color_popover' => 'yes'
-				],
-			]
-		);
-
-		$this->end_popover();
 
 		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'submit',
 			[
-				'label' => __( 'Button', 'addons-plus' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
+				'label' => __( 'Submit Button', 'addons-plus' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'submit_btn_width',
+			[
+				'label' => __( 'Button Full Width?', 'addons-plus' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Yes', 'addons-plus' ),
+				'label_off' => __( 'No', 'addons-plus' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
 			]
 		);
 
 		$this->add_responsive_control(
 			'button_width',
 			[
-				'label'      => __( 'Button Width', 'addons-plus' ),
-				'type'       => Controls_Manager::SLIDER,
+				'label' => __( 'Button Width', 'addons-plus' ),
+				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
-				'default'    => [
+				'condition' => [
+					'submit_btn_width' => 'yes'
+				],
+				'default' => [
 					'unit' => '%',
 					'size' => 100
 				],
-				'range'      => [
-					'%'  => [
+				'range' => [
+					'%' => [
 						'min' => 1,
 						'max' => 100,
 					],
@@ -659,21 +571,20 @@ class Caldera_Form extends Widget_Base {
 						'max' => 800,
 					],
 				],
-				'selectors'  => [
-					'{{WRAPPER}} .wpforms-submit' => 'display: block; width: {{SIZE}}{{UNIT}};',
+				'selectors' => [
+					'{{WRAPPER}} .form-group .btn' => 'display: block; width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
-
 		$this->add_responsive_control(
 			'submit_margin',
 			[
-				'label'      => __( 'Margin', 'addons-plus' ),
-				'type'       => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Margin', 'addons-plus' ),
+				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
-				'selectors'  => [
-					'{{WRAPPER}} .wpforms-submit' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'selectors' => [
+					'{{WRAPPER}} .form-group .btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -681,11 +592,11 @@ class Caldera_Form extends Widget_Base {
 		$this->add_responsive_control(
 			'submit_padding',
 			[
-				'label'      => __( 'Padding', 'addons-plus' ),
-				'type'       => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Padding', 'addons-plus' ),
+				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
-				'selectors'  => [
-					'{{WRAPPER}} .wpforms-submit' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'selectors' => [
+					'{{WRAPPER}} .form-group .btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -693,28 +604,27 @@ class Caldera_Form extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'submit_typography',
-				'selector' => '{{WRAPPER}} .wpforms-submit',
-				'scheme'   => Scheme_Typography::TYPOGRAPHY_4
+				'name' => 'submit_typography',
+				'selector' => '{{WRAPPER}} .form-group .btn',
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'     => 'submit_border',
-				'selector' => '{{WRAPPER}} .wpforms-form .wpforms-submit-container button[type=submit]',
+				'name' => 'submit_border',
+				'selector' => '{{WRAPPER}} .form-group .btn',
 			]
 		);
 
 		$this->add_control(
 			'submit_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'addons-plus' ),
-				'type'       => Controls_Manager::DIMENSIONS,
+				'label' => __( 'Border Radius', 'addons-plus' ),
+				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
-				'selectors'  => [
-					'{{WRAPPER}} .wpforms-submit' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'selectors' => [
+					'{{WRAPPER}} .form-group .btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -722,15 +632,15 @@ class Caldera_Form extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'     => 'submit_box_shadow',
-				'selector' => '{{WRAPPER}} .wpforms-submit',
+				'name' => 'submit_box_shadow',
+				'selector' => '{{WRAPPER}} .form-group .btn',
 			]
 		);
 
 		$this->add_control(
 			'hr4',
 			[
-				'type'  => Controls_Manager::DIVIDER,
+				'type' => Controls_Manager::DIVIDER,
 				'style' => 'thick',
 			]
 		);
@@ -747,11 +657,11 @@ class Caldera_Form extends Widget_Base {
 		$this->add_control(
 			'submit_color',
 			[
-				'label'     => __( 'Text Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
+				'label' => __( 'Text Color', 'addons-plus' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .wpforms-submit' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .form-group .btn' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -759,10 +669,10 @@ class Caldera_Form extends Widget_Base {
 		$this->add_control(
 			'submit_bg_color',
 			[
-				'label'     => __( 'Background Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
+				'label' => __( 'Background Color', 'addons-plus' ),
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .wpforms-submit' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .form-group .btn' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -779,10 +689,10 @@ class Caldera_Form extends Widget_Base {
 		$this->add_control(
 			'submit_hover_color',
 			[
-				'label'     => __( 'Text Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
+				'label' => __( 'Text Color', 'addons-plus' ),
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .wpforms-submit:hover, {{WRAPPER}} .wpforms-submit:focus' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .form-group .btn:hover, {{WRAPPER}} .form-group .btn:focus' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -790,10 +700,10 @@ class Caldera_Form extends Widget_Base {
 		$this->add_control(
 			'submit_hover_bg_color',
 			[
-				'label'     => __( 'Background Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
+				'label' => __( 'Background Color', 'addons-plus' ),
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .wpforms-submit:hover, {{WRAPPER}} .wpforms-submit:focus' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .form-group .btn:hover, {{WRAPPER}} .form-group .btn:focus' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -801,10 +711,10 @@ class Caldera_Form extends Widget_Base {
 		$this->add_control(
 			'submit_hover_border_color',
 			[
-				'label'     => __( 'Border Color', 'addons-plus' ),
-				'type'      => Controls_Manager::COLOR,
+				'label' => __( 'Border Color', 'addons-plus' ),
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .wpforms-submit:hover, {{WRAPPER}} .wpforms-submit:focus' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .form-group .btn:hover, {{WRAPPER}} .form-group .btn:focus' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
